@@ -78,7 +78,7 @@ Horilla can be installed on your system by following the steps below. Ensure you
 5. **Configure PostgreSQL Database and User**:
    - Switch to the `postgres` user:
      ```bash
-     sudo su postgres
+     sudo -u postgres
      psql
      ```
    - Create a new role and database:
