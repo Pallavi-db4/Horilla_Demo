@@ -262,8 +262,8 @@ Follow these steps to run migrations and set up the database.
 To enable translations and breadcrumbs text, compile the translations using the following commands.
 
 #### **Ubuntu/macOS**
-sudo apt update 
-sudo apt install gettext -y 
+****sudo apt update 
+****sudo apt install gettext -y 
 msgfmt --version 
 
 ```bash
@@ -387,4 +387,5 @@ python manage.py runserver 8080   # For Windows
 ---
 
 This README provides a comprehensive guide to installing and setting up Horilla on various platforms. If you encounter any issues, feel free to reach out to the Horilla community for support. Happy coding! 🚀
+
 
