@@ -78,8 +78,7 @@ Horilla can be installed on your system by following the steps below. Ensure you
 5. **Configure PostgreSQL Database and User**:
    - Switch to the `postgres` user:
      ```bash
-     sudo -u postgres
-     psql
+     sudo -u postgres psql
      ```
    - Create a new role and database:
      ```sql
@@ -263,9 +262,15 @@ Follow these steps to run migrations and set up the database.
 To enable translations and breadcrumbs text, compile the translations using the following commands.
 
 #### **Ubuntu/macOS**
+sudo apt update 
+sudo apt install gettext -y 
+msgfmt --version 
+
 ```bash
 python3 manage.py compilemessages
 ```
+* sudo apt install net-tools 
+* ifconfig 
 
 #### **Windows**
 ```powershell
@@ -280,7 +285,9 @@ To run the project locally, execute the following commands.
 
 #### **Ubuntu/macOS**
 ```bash
+python3 manage.py runserver 0.0.0.0:8001
 python3 manage.py runserver
+
 ```
 
 #### **Windows**
@@ -380,3 +387,4 @@ python manage.py runserver 8080   # For Windows
 ---
 
 This README provides a comprehensive guide to installing and setting up Horilla on various platforms. If you encounter any issues, feel free to reach out to the Horilla community for support. Happy coding! 🚀
+
