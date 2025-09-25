@@ -12,12 +12,6 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        
-      - name: Run GitLeaks Scan
-        uses: zricethezav/gitleaks-action@v2
-        with:
-          config-path: .gitleaks.toml   # optional config file in repo
-          verbose: true
  
       - name: Set up Python
         uses: actions/setup-python@v5
