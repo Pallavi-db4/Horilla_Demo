@@ -26,9 +26,18 @@ jobs:
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/horilla-demo:v1 .
           docker push ${{ secrets.DOCKER_USERNAME }}/horilla-demo:v1
- 
-      - name: Run Django Server
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
         run: |
-            python3 manage.py makemigrations &&
-            python3 manage.py migrate &&
-            python3 manage.py test 
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Django Tests
+        run: |
+          python manage.py makemigrations --check --dry-run
+          python manage.py migrate --check --plan
+          python manage.py test
